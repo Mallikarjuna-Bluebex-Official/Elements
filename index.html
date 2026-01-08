@@ -5,57 +5,205 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Coming Soon</title>
 
+  <!-- Font Awesome for icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      font-family: "Arial", sans-serif;
     }
 
     body {
       height: 100vh;
+      background-image: url("./assets/images/bg_image.png");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      color: #fff;
+    }
+
+
+    /* Overlay */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      z-index: -1;
+    }
+
+    /* Header */
+    header {
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-    
+      padding: 25px 60px;
     }
 
+    .logo {
+      font-size: 18px;
+      letter-spacing: 2px;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 30px;
+      font-size: 14px;
+    }
+
+    /* Main Section */
     .container {
-      text-align: center;
-      padding: 40px;
-      max-width: 600px;
+      display: flex;
+      height: calc(100vh - 90px);
+      padding: 0 100px;
+      align-items: center;
     }
 
-    .construction-img {
-      width: 220px;
-      margin-bottom: 15px;
+    .left {
+      flex: 1;
     }
 
-    h1 {
-      font-size: 3rem;
+    .left h1 {
+      font-size: 64px;
+      letter-spacing: 10px;
+      line-height: 1.2;
+    }
+
+    .left span {
+      display: block;
+    }
+
+    .right {
+      flex: 1;
+      padding-left: 60px;
+      border-left: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
+    .right p {
+      font-size: 15px;
+      line-height: 1.7;
+      margin-bottom: 30px;
+      max-width: 420px;
+    }
+
+    .subscribe {
+      margin-bottom: 30px;
+    }
+
+    .subscribe p {
       margin-bottom: 10px;
+      font-weight: 600;
     }
 
-    p {
-      font-size: 1rem;
-      opacity: 0.9;
+    .form {
+      display: flex;
+      max-width: 420px;
+    }
+
+    .form input {
+      flex: 1;
+      padding: 12px;
+      border: 1px solid #fff;
+      background: transparent;
+      color: #fff;
+      outline: none;
+    }
+
+    .form button {
+      padding: 12px 20px;
+      border: none;
+      background: #fff;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .social-icons a {
+      color: #fff;
+      margin-right: 15px;
+      font-size: 16px;
+      border: 1px solid #fff;
+      padding: 8px;
+      display: inline-block;
+      width: 36px;
+      height: 36px;
+      text-align: center;
+      line-height: 18px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .right {
+        border-left: none;
+        padding-left: 0;
+        margin-top: 40px;
+      }
+
+      .left h1 {
+        font-size: 48px;
+      }
+
+      header {
+        padding: 20px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
+  <header>
+    <div class="logo">COMING SOON</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Contact Us</a>
+    </nav>
+  </header>
 
-    <!-- Image -->
-    <img 
-      src="./assets/images/coming-soon-banner2.png" 
-      alt="Website Under Construction" 
-      class="construction-img"
-    />
+  <section class="container">
+    <div class="left">
+      <h1>
+        <span>WE ARE</span>
+        <span>COMING</span>
+        <span>SOON!</span>
+      </h1>
+    </div>
 
-    <h1>Coming Soon</h1>
-    <p>We are working hard to launch our website. Stay tuned!</p>
-  </div>
+    <div class="right">
+      <p>
+        Exciting things are on the horizon! Our website is launching soon,
+        so stay tuned for a world of innovation, inspiration, and endless
+        possibilities.
+      </p>
+
+      <div class="subscribe">
+        <p>Subscribe and get updates</p>
+        <div class="form">
+          <input type="email" placeholder="Your@example.com" />
+          <button>NOTIFY ME</button>
+        </div>
+      </div>
+
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-google-plus-g"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </section>
 
 </body>
 </html>
